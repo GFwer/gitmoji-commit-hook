@@ -3,17 +3,15 @@
 const fs = require('fs');
 const { promisify } = require('util');
 const inquirer = require('inquirer');
-const axios = require('axios');
 const chalk = require('chalk');
 const pathExists = require('path-exists');
 const fileExists = require('file-exists');
-const { map, path, test, join } = require('ramda');
-
+const { map, test, join } = require('ramda');
+const config = require('../conf');
 const writeFile = promisify(fs.writeFile);
 const readFile = promisify(fs.readFile);
 const chmod = promisify(fs.chmod);
 
-const gitmojiUrl = 'https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json';
 const prepareCommitMsgFileName = 'prepare-commit-msg';
 
 const gitmojiCommitHookComand = `#!/bin/sh
@@ -40,9 +38,14 @@ function rejectIfNot(errorMsg) {
   return val => val ? val : Promise.reject(new Error(errorMsg));
 }
 
+
+function getMojiList() {
+  return new Promise((resolve) => {
+    resolve(config.get('mojiList'));
+  });
+}
 function getGitmojiList() {
-  return axios.get(gitmojiUrl)
-    .then(path(['data', 'gitmojis']))
+  return getMojiList()
     .then(rejectIfNot(errorMessage.gitmojiParse));
 }
 
