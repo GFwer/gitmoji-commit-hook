@@ -1,7 +1,7 @@
 {
-  "name": "gitmoji-commit-hook",
-  "version": "3.0.1",
-  "description": "Start the commit message with an right emoji",
+  "name": "@fawen/gitmoji-commit-hook",
+  "version": "0.0.2",
+  "description": "commit with local source emoji",
   "main": "bin/index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.js ./bin/*.js test.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tjoskar/emoji-commit-hook.git"
+    "url": "git+ssh://git@github.com:GFwer/gitmoji-commit-hook.git"
   },
   "keywords": [
     "git",
@@ -22,16 +22,13 @@
   },
   "author": "Oskar Karlsson <kontakta@oskarkarlsson.nu>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tjoskar/emoji-commit-hook/issues"
-  },
-  "homepage": "https://github.com/tjoskar/emoji-commit-hook#readme",
   "engines": {
     "node": ">=8.0.0"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "chalk": "^2.4.2",
+    "conf": "^5.0.0",
     "file-exists": "^5.0.1",
     "inquirer": "^6.5.0",
     "path-exists": "^4.0.0",

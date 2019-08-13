@@ -1,7 +1,5 @@
 # Gitmoji-commit-hook
 
-[![Build Status](https://travis-ci.org/tjoskar/gitmoji-commit-hook.svg?branch=master)](https://travis-ci.org/tjoskar/gitmoji-commit-hook)
-
 > Prepend the right emoji to your commit message from [Gitmoji](https://github.com/carloscuesta/gitmoji)
 
 ## Install
@@ -9,7 +7,7 @@
 - Install gitmoji-commit-hook package
 
 ```
-$ npm install -g gitmoji-commit-hook
+$ npm install -g @fawen/gitmoji-commit-hook
 ```
 
 - Install the hook
